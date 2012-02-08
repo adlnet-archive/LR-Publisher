@@ -1,0 +1,3 @@
+[submodule "LR.Net"]
+	path = LR.Net
+	url = https://github.com/adlnet/LR.Net.git
