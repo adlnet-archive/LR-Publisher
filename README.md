@@ -30,4 +30,4 @@ git submodule init
 git submodule update
 ```
 
-If you just want the binaries, you can find them in the [Downloads] section.
+If you just want the binaries, you can find them in the [Downloads](https://github.com/adlnet/lr-publisher/downloads) section.
