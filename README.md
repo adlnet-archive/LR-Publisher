@@ -18,7 +18,7 @@ Feature requests are welcomed and may be filed as issues in this repository.
 
 The following operating systems are supported for both development and runtime:
 
-- Windows (requires gtk-sharp for development)
+- Windows (requires [gtk-sharp](http://download.mono-project.com/gtk-sharp/gtk-sharp-2.12.10.win32.msi))
 - OSX / Linux (requires mono)
 
 ## Installation
