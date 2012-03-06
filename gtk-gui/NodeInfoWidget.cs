@@ -10,6 +10,7 @@ public partial class NodeInfoWidget
 	private global::Gtk.Label lbl_http;
 	private global::Gtk.Entry NodeUrlTextBox;
 	private global::Gtk.Label lbl_trailingSlash;
+	private global::Gtk.CheckButton UseSslCheckbox;
 	private global::Gtk.Label lbl_AuthType;
 	private global::Gtk.ComboBox AuthTypeComboBox;
 	private global::Gtk.VBox AuthCredentialsContainer;
@@ -80,15 +81,27 @@ public partial class NodeInfoWidget
 		w5.Expand = false;
 		w5.Fill = false;
 		// Container child NodeInfoColumn.Gtk.Box+BoxChild
+		this.UseSslCheckbox = new global::Gtk.CheckButton ();
+		this.UseSslCheckbox.CanFocus = true;
+		this.UseSslCheckbox.Name = "UseSslCheckbox";
+		this.UseSslCheckbox.Label = global::Mono.Unix.Catalog.GetString ("Use SSL");
+		this.UseSslCheckbox.DrawIndicator = true;
+		this.UseSslCheckbox.UseUnderline = true;
+		this.NodeInfoColumn.Add (this.UseSslCheckbox);
+		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.NodeInfoColumn [this.UseSslCheckbox]));
+		w6.Position = 2;
+		w6.Expand = false;
+		w6.Fill = false;
+		// Container child NodeInfoColumn.Gtk.Box+BoxChild
 		this.lbl_AuthType = new global::Gtk.Label ();
 		this.lbl_AuthType.Name = "lbl_AuthType";
 		this.lbl_AuthType.Xalign = 0F;
 		this.lbl_AuthType.LabelProp = global::Mono.Unix.Catalog.GetString ("Auth Type:");
 		this.NodeInfoColumn.Add (this.lbl_AuthType);
-		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.NodeInfoColumn [this.lbl_AuthType]));
-		w6.Position = 2;
-		w6.Expand = false;
-		w6.Fill = false;
+		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.NodeInfoColumn [this.lbl_AuthType]));
+		w7.Position = 3;
+		w7.Expand = false;
+		w7.Fill = false;
 		// Container child NodeInfoColumn.Gtk.Box+BoxChild
 		this.AuthTypeComboBox = global::Gtk.ComboBox.NewText ();
 		this.AuthTypeComboBox.AppendText (global::Mono.Unix.Catalog.GetString ("None"));
@@ -96,10 +109,10 @@ public partial class NodeInfoWidget
 		this.AuthTypeComboBox.Name = "AuthTypeComboBox";
 		this.AuthTypeComboBox.Active = 0;
 		this.NodeInfoColumn.Add (this.AuthTypeComboBox);
-		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.NodeInfoColumn [this.AuthTypeComboBox]));
-		w7.Position = 3;
-		w7.Expand = false;
-		w7.Fill = false;
+		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.NodeInfoColumn [this.AuthTypeComboBox]));
+		w8.Position = 4;
+		w8.Expand = false;
+		w8.Fill = false;
 		// Container child NodeInfoColumn.Gtk.Box+BoxChild
 		this.AuthCredentialsContainer = new global::Gtk.VBox ();
 		this.AuthCredentialsContainer.Name = "AuthCredentialsContainer";
@@ -110,10 +123,10 @@ public partial class NodeInfoWidget
 		this.lbl_AuthUsername.Xalign = 0F;
 		this.lbl_AuthUsername.LabelProp = global::Mono.Unix.Catalog.GetString ("*Username:");
 		this.AuthCredentialsContainer.Add (this.lbl_AuthUsername);
-		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.AuthCredentialsContainer [this.lbl_AuthUsername]));
-		w8.Position = 0;
-		w8.Expand = false;
-		w8.Fill = false;
+		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.AuthCredentialsContainer [this.lbl_AuthUsername]));
+		w9.Position = 0;
+		w9.Expand = false;
+		w9.Fill = false;
 		// Container child AuthCredentialsContainer.Gtk.Box+BoxChild
 		this.AuthUsernameTextBox = new global::Gtk.Entry ();
 		this.AuthUsernameTextBox.CanFocus = true;
@@ -121,20 +134,20 @@ public partial class NodeInfoWidget
 		this.AuthUsernameTextBox.IsEditable = true;
 		this.AuthUsernameTextBox.InvisibleChar = '●';
 		this.AuthCredentialsContainer.Add (this.AuthUsernameTextBox);
-		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.AuthCredentialsContainer [this.AuthUsernameTextBox]));
-		w9.Position = 1;
-		w9.Expand = false;
-		w9.Fill = false;
+		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.AuthCredentialsContainer [this.AuthUsernameTextBox]));
+		w10.Position = 1;
+		w10.Expand = false;
+		w10.Fill = false;
 		// Container child AuthCredentialsContainer.Gtk.Box+BoxChild
 		this.lbl_AuthPassword = new global::Gtk.Label ();
 		this.lbl_AuthPassword.Name = "lbl_AuthPassword";
 		this.lbl_AuthPassword.Xalign = 0F;
 		this.lbl_AuthPassword.LabelProp = global::Mono.Unix.Catalog.GetString ("*Password:");
 		this.AuthCredentialsContainer.Add (this.lbl_AuthPassword);
-		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.AuthCredentialsContainer [this.lbl_AuthPassword]));
-		w10.Position = 2;
-		w10.Expand = false;
-		w10.Fill = false;
+		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.AuthCredentialsContainer [this.lbl_AuthPassword]));
+		w11.Position = 2;
+		w11.Expand = false;
+		w11.Fill = false;
 		// Container child AuthCredentialsContainer.Gtk.Box+BoxChild
 		this.AuthPasswordTextBox = new global::Gtk.Entry ();
 		this.AuthPasswordTextBox.CanFocus = true;
@@ -142,26 +155,27 @@ public partial class NodeInfoWidget
 		this.AuthPasswordTextBox.IsEditable = true;
 		this.AuthPasswordTextBox.InvisibleChar = '●';
 		this.AuthCredentialsContainer.Add (this.AuthPasswordTextBox);
-		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.AuthCredentialsContainer [this.AuthPasswordTextBox]));
-		w11.Position = 3;
-		w11.Expand = false;
-		w11.Fill = false;
-		this.NodeInfoColumn.Add (this.AuthCredentialsContainer);
-		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.NodeInfoColumn [this.AuthCredentialsContainer]));
-		w12.Position = 4;
+		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.AuthCredentialsContainer [this.AuthPasswordTextBox]));
+		w12.Position = 3;
 		w12.Expand = false;
 		w12.Fill = false;
-		this.NodeInformationContainer.Add (this.NodeInfoColumn);
-		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.NodeInformationContainer [this.NodeInfoColumn]));
-		w13.Position = 0;
+		this.NodeInfoColumn.Add (this.AuthCredentialsContainer);
+		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.NodeInfoColumn [this.AuthCredentialsContainer]));
+		w13.Position = 5;
 		w13.Expand = false;
 		w13.Fill = false;
+		this.NodeInformationContainer.Add (this.NodeInfoColumn);
+		global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.NodeInformationContainer [this.NodeInfoColumn]));
+		w14.Position = 0;
+		w14.Expand = false;
+		w14.Fill = false;
 		this.Add (this.NodeInformationContainer);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
 		this.AuthCredentialsContainer.Hide ();
 		this.Hide ();
+		this.UseSslCheckbox.Clicked += new global::System.EventHandler (this.OnUseSslCheckboxClicked);
 		this.AuthTypeComboBox.Changed += new global::System.EventHandler (this.HandleAuthTypeChanged);
 	}
 }

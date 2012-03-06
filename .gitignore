@@ -1,1 +1,5 @@
 ConsoleApplication1
+*.suo
+*.pidb
+*.userprefs
+*.user

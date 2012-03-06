@@ -186,6 +186,7 @@ public partial class CsvToLrWindow : Gtk.Window
 		{
 			signer = new PgpSigner(sigInfo.PgpPublicKeyLocations,
 			                       sigInfo.PgpKeyringLocation,
+			                       sigInfo.PgpSecretKeyUsername,
 			                       sigInfo.PgpSecretKeyPassphrase);
 			needToSign = true;
 		}

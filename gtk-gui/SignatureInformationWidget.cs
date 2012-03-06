@@ -9,6 +9,8 @@ public partial class SignatureInformationWidget
 	private global::Gtk.VBox PgpInfoContainer;
 	private global::Gtk.Label lbl_PgpSecretKeyRingLocation;
 	private global::Gtk.FileChooserButton PgpSecretKeyRingLocationFileChooser;
+	private global::Gtk.Label lbl_PgpSecKeyUsername;
+	private global::Gtk.Entry PgpSecKeyUsernameTextBox;
 	private global::Gtk.Label lbl_PgpSecretKeyPassphrase;
 	private global::Gtk.Entry PgpSecretKeyPassphraseTextBox;
 	private global::Gtk.Label lbl_PgpPublicKeyLocations;
@@ -70,15 +72,36 @@ public partial class SignatureInformationWidget
 		w4.Expand = false;
 		w4.Fill = false;
 		// Container child PgpInfoContainer.Gtk.Box+BoxChild
+		this.lbl_PgpSecKeyUsername = new global::Gtk.Label ();
+		this.lbl_PgpSecKeyUsername.Name = "lbl_PgpSecKeyUsername";
+		this.lbl_PgpSecKeyUsername.Xalign = 0F;
+		this.lbl_PgpSecKeyUsername.LabelProp = global::Mono.Unix.Catalog.GetString ("*User Name:");
+		this.PgpInfoContainer.Add (this.lbl_PgpSecKeyUsername);
+		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.PgpInfoContainer [this.lbl_PgpSecKeyUsername]));
+		w5.Position = 2;
+		w5.Expand = false;
+		w5.Fill = false;
+		// Container child PgpInfoContainer.Gtk.Box+BoxChild
+		this.PgpSecKeyUsernameTextBox = new global::Gtk.Entry ();
+		this.PgpSecKeyUsernameTextBox.CanFocus = true;
+		this.PgpSecKeyUsernameTextBox.Name = "PgpSecKeyUsernameTextBox";
+		this.PgpSecKeyUsernameTextBox.IsEditable = true;
+		this.PgpSecKeyUsernameTextBox.InvisibleChar = '●';
+		this.PgpInfoContainer.Add (this.PgpSecKeyUsernameTextBox);
+		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.PgpInfoContainer [this.PgpSecKeyUsernameTextBox]));
+		w6.Position = 3;
+		w6.Expand = false;
+		w6.Fill = false;
+		// Container child PgpInfoContainer.Gtk.Box+BoxChild
 		this.lbl_PgpSecretKeyPassphrase = new global::Gtk.Label ();
 		this.lbl_PgpSecretKeyPassphrase.Name = "lbl_PgpSecretKeyPassphrase";
 		this.lbl_PgpSecretKeyPassphrase.Xalign = 0F;
 		this.lbl_PgpSecretKeyPassphrase.LabelProp = global::Mono.Unix.Catalog.GetString ("*Secret Key Passphrase:");
 		this.PgpInfoContainer.Add (this.lbl_PgpSecretKeyPassphrase);
-		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.PgpInfoContainer [this.lbl_PgpSecretKeyPassphrase]));
-		w5.Position = 2;
-		w5.Expand = false;
-		w5.Fill = false;
+		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.PgpInfoContainer [this.lbl_PgpSecretKeyPassphrase]));
+		w7.Position = 4;
+		w7.Expand = false;
+		w7.Fill = false;
 		// Container child PgpInfoContainer.Gtk.Box+BoxChild
 		this.PgpSecretKeyPassphraseTextBox = new global::Gtk.Entry ();
 		this.PgpSecretKeyPassphraseTextBox.CanFocus = true;
@@ -86,20 +109,20 @@ public partial class SignatureInformationWidget
 		this.PgpSecretKeyPassphraseTextBox.IsEditable = true;
 		this.PgpSecretKeyPassphraseTextBox.InvisibleChar = '●';
 		this.PgpInfoContainer.Add (this.PgpSecretKeyPassphraseTextBox);
-		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.PgpInfoContainer [this.PgpSecretKeyPassphraseTextBox]));
-		w6.Position = 3;
-		w6.Expand = false;
-		w6.Fill = false;
+		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.PgpInfoContainer [this.PgpSecretKeyPassphraseTextBox]));
+		w8.Position = 5;
+		w8.Expand = false;
+		w8.Fill = false;
 		// Container child PgpInfoContainer.Gtk.Box+BoxChild
 		this.lbl_PgpPublicKeyLocations = new global::Gtk.Label ();
 		this.lbl_PgpPublicKeyLocations.Name = "lbl_PgpPublicKeyLocations";
 		this.lbl_PgpPublicKeyLocations.Xalign = 0F;
 		this.lbl_PgpPublicKeyLocations.LabelProp = global::Mono.Unix.Catalog.GetString ("*Public Key Location(s) (separated by commas):");
 		this.PgpInfoContainer.Add (this.lbl_PgpPublicKeyLocations);
-		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.PgpInfoContainer [this.lbl_PgpPublicKeyLocations]));
-		w7.Position = 4;
-		w7.Expand = false;
-		w7.Fill = false;
+		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.PgpInfoContainer [this.lbl_PgpPublicKeyLocations]));
+		w9.Position = 6;
+		w9.Expand = false;
+		w9.Fill = false;
 		// Container child PgpInfoContainer.Gtk.Box+BoxChild
 		this.PgpPublicKeyLocationsTextBox = new global::Gtk.Entry ();
 		this.PgpPublicKeyLocationsTextBox.CanFocus = true;
@@ -107,15 +130,15 @@ public partial class SignatureInformationWidget
 		this.PgpPublicKeyLocationsTextBox.IsEditable = true;
 		this.PgpPublicKeyLocationsTextBox.InvisibleChar = '●';
 		this.PgpInfoContainer.Add (this.PgpPublicKeyLocationsTextBox);
-		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.PgpInfoContainer [this.PgpPublicKeyLocationsTextBox]));
-		w8.Position = 5;
-		w8.Expand = false;
-		w8.Fill = false;
+		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.PgpInfoContainer [this.PgpPublicKeyLocationsTextBox]));
+		w10.Position = 7;
+		w10.Expand = false;
+		w10.Fill = false;
 		this.SignatureInformationContainer.Add (this.PgpInfoContainer);
-		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.SignatureInformationContainer [this.PgpInfoContainer]));
-		w9.Position = 2;
-		w9.Expand = false;
-		w9.Fill = false;
+		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.SignatureInformationContainer [this.PgpInfoContainer]));
+		w11.Position = 2;
+		w11.Expand = false;
+		w11.Fill = false;
 		this.Add (this.SignatureInformationContainer);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
