@@ -1076,7 +1076,7 @@ Agent</property>
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Bin" id="NodeInfoWidget" design-size="300 300">
+  <widget class="Gtk.Bin" id="NodeInfoWidget" design-size="239 237">
     <property name="MemberName" />
     <property name="Visible">False</property>
     <child>
@@ -1150,13 +1150,30 @@ Agent</property>
               </packing>
             </child>
             <child>
+              <widget class="Gtk.CheckButton" id="UseSslCheckbox">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Label" translatable="yes">Use SSL</property>
+                <property name="DrawIndicator">True</property>
+                <property name="HasLabel">True</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnUseSslCheckboxClicked" />
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
               <widget class="Gtk.Label" id="lbl_AuthType">
                 <property name="MemberName" />
                 <property name="Xalign">0</property>
                 <property name="LabelProp" translatable="yes">Auth Type:</property>
               </widget>
               <packing>
-                <property name="Position">2</property>
+                <property name="Position">3</property>
                 <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>
@@ -1172,7 +1189,7 @@ HTTP Basic</property>
                 <signal name="Changed" handler="HandleAuthTypeChanged" />
               </widget>
               <packing>
-                <property name="Position">3</property>
+                <property name="Position">4</property>
                 <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>
@@ -1239,7 +1256,7 @@ HTTP Basic</property>
                 </child>
               </widget>
               <packing>
-                <property name="Position">4</property>
+                <property name="Position">5</property>
                 <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>
@@ -1324,10 +1341,10 @@ Sign with CAC Card</property>
               </packing>
             </child>
             <child>
-              <widget class="Gtk.Label" id="lbl_PgpSecretKeyPassphrase">
+              <widget class="Gtk.Label" id="lbl_PgpSecKeyUsername">
                 <property name="MemberName" />
                 <property name="Xalign">0</property>
-                <property name="LabelProp" translatable="yes">*Secret Key Passphrase:</property>
+                <property name="LabelProp" translatable="yes">*User Name:</property>
               </widget>
               <packing>
                 <property name="Position">2</property>
@@ -1337,7 +1354,7 @@ Sign with CAC Card</property>
               </packing>
             </child>
             <child>
-              <widget class="Gtk.Entry" id="PgpSecretKeyPassphraseTextBox">
+              <widget class="Gtk.Entry" id="PgpSecKeyUsernameTextBox">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="IsEditable">True</property>
@@ -1351,13 +1368,40 @@ Sign with CAC Card</property>
               </packing>
             </child>
             <child>
+              <widget class="Gtk.Label" id="lbl_PgpSecretKeyPassphrase">
+                <property name="MemberName" />
+                <property name="Xalign">0</property>
+                <property name="LabelProp" translatable="yes">*Secret Key Passphrase:</property>
+              </widget>
+              <packing>
+                <property name="Position">4</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="PgpSecretKeyPassphraseTextBox">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">●</property>
+              </widget>
+              <packing>
+                <property name="Position">5</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
               <widget class="Gtk.Label" id="lbl_PgpPublicKeyLocations">
                 <property name="MemberName" />
                 <property name="Xalign">0</property>
                 <property name="LabelProp" translatable="yes">*Public Key Location(s) (separated by commas):</property>
               </widget>
               <packing>
-                <property name="Position">4</property>
+                <property name="Position">6</property>
                 <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>
@@ -1371,7 +1415,7 @@ Sign with CAC Card</property>
                 <property name="InvisibleChar">●</property>
               </widget>
               <packing>
-                <property name="Position">5</property>
+                <property name="Position">7</property>
                 <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>

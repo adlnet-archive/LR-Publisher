@@ -10,6 +10,8 @@ public partial class SignatureInformationWidget : Gtk.Bin
 	public SignatureType SignatureType { get { return (SignatureType)this.SignatureTypeComboBox.Active; } }
 	public string PgpKeyringLocation { get { return this.PgpSecretKeyRingLocationFileChooser.Filename; } }
 	public string PgpSecretKeyPassphrase { get { return this.PgpSecretKeyPassphraseTextBox.Text; } }
+	public string PgpSecretKeyUsername { get { return this.PgpSecKeyUsernameTextBox.Text; } }
+	
 	public List<string> PgpPublicKeyLocations 
 	{ 
 		get 
@@ -43,6 +45,7 @@ public partial class SignatureInformationWidget : Gtk.Bin
 	{
 		this.SignatureTypeComboBox.Active = 0;
 		this.PgpPublicKeyLocationsTextBox.Text = String.Empty;
+		this.PgpSecKeyUsernameTextBox.Text = String.Empty;
 		this.PgpSecretKeyPassphraseTextBox.Text = String.Empty;
 		this.PgpSecretKeyRingLocationFileChooser.UnselectAll();
 		UpdateSubcontainerVisibility(this, null);
@@ -55,6 +58,9 @@ public partial class SignatureInformationWidget : Gtk.Bin
 		{
 			if(String.IsNullOrEmpty(this.PgpSecretKeyRingLocationFileChooser.Filename))
 				missingFields.Add(this.lbl_PgpSecretKeyRingLocation);
+			
+			if(String.IsNullOrEmpty(this.PgpSecKeyUsernameTextBox.Text))
+				missingFields.Add(this.lbl_PgpSecKeyUsername);
 			
 			if(String.IsNullOrEmpty(this.PgpSecretKeyPassphraseTextBox.Text))
 				missingFields.Add(this.lbl_PgpSecretKeyPassphrase);
