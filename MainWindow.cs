@@ -59,6 +59,7 @@ public partial class MainWindow: Gtk.Window
 			{
 				PgpSigner signer = new PgpSigner(sigInfo.PgpPublicKeyLocations,
 				                                 sigInfo.PgpKeyringLocation,
+				                                 sigInfo.PgpSecretKeyUsername,
 				                                 sigInfo.PgpSecretKeyPassphrase);
 				
 				doc = signer.Sign(doc);
@@ -95,6 +96,7 @@ public partial class MainWindow: Gtk.Window
 				WriteLineToConsole("Publish failed! Reason:\n"+exception.Message);
 				WriteToConsole("Stack Trace:\n" + exception.StackTrace);
 			}
+			WriteLineToConsole("\n========END PUBLISH ATTEMPT========");
 		} 
 		else
 			ShowMissingFields();

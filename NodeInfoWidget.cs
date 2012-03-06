@@ -12,11 +12,11 @@ public partial class NodeInfoWidget : Gtk.Bin
 	{
 		get 
 		{ 
-			return "http://"+this.NodeUrlTextBox.Text; 
+			return this.lbl_http.Text+this.NodeUrlTextBox.Text; 
 		}
 		set 
 		{
-			this.NodeUrlTextBox.Text = value.Replace("http://", "");
+			this.NodeUrlTextBox.Text = value.Replace(this.lbl_http.Text, "");
 		}
 	}
 	
@@ -71,6 +71,14 @@ public partial class NodeInfoWidget : Gtk.Bin
 		}
 		
 		return missingFields;
+	}
+
+	protected void OnUseSslCheckboxClicked (object sender, System.EventArgs e)
+	{
+		if(this.UseSslCheckbox.Active)
+			this.lbl_http.Text = "https://";
+		else
+			this.lbl_http.Text = "http://";
 	}
 }
 
