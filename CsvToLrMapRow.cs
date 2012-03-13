@@ -35,11 +35,9 @@ public partial class CsvToLrMapRow : Gtk.Bin
 	{
 		get
 		{
-			//TODO: improve exception throwing/handling for empty columns
             if (ColumnOptionsComboBox.Active == 0)
                     return null;
-               return ColumnOptionsComboBox.ActiveText;
-			
+            return ColumnOptionsComboBox.ActiveText;
 		}
 	}
 
