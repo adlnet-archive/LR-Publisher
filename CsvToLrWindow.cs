@@ -21,7 +21,6 @@ public partial class CsvToLrWindow : Gtk.Window
     private Dictionary<string, List<string>> _rowData;
 
 	private string[] _columns;
-    private DataTable _table;
 
     List<Type> nestedTypes = new List<Type>()
 	{
@@ -79,7 +78,6 @@ public partial class CsvToLrWindow : Gtk.Window
 	
 	private bool ValidateRequiredFields()
 	{
-		bool valid = true;
 		
 		
 		Gdk.Color black = new Gdk.Color();
@@ -91,7 +89,7 @@ public partial class CsvToLrWindow : Gtk.Window
 		foreach(CsvToLrMapRow row in MapRowsContainer)
 		{
             if (row.Key.Contains("*") && (
-			   	    (row.DropDownValue == null && !row.IsConstant) || 
+			   	    (row.DropDownValue == null && (!row.IsConstant || !row.HasConstantValues)) ||
 			 	    (row.IsConstant && String.IsNullOrEmpty(row.ConstantValue))
                ))
 
@@ -262,6 +260,8 @@ public partial class CsvToLrWindow : Gtk.Window
                         val = currentRow.ConstantValue;
                     else if (currentRow.IsSerializeToRow)
                         val = _rawRowDataList[i];
+                    else if (currentRow.HasConstantValues)
+                        val = currentRow.DropDownValue;
                     else if (currentRow.DropDownValue == null)
                         continue; //Nothing to map to or assign if they did not choose a value from the dropdown
                     else
@@ -302,6 +302,8 @@ public partial class CsvToLrWindow : Gtk.Window
                             val = rowToAdd.ConstantValue;
                         else if (rowToAdd.IsSerializeToRow)
                             val = _rawRowDataList[i];
+                        else if (rowToAdd.HasConstantValues)
+                            val = rowToAdd.DropDownValue;
                         else if (rowToAdd.DropDownValue == null)
                             continue;
                         else
